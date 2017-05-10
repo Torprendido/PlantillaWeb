@@ -13,7 +13,7 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
-	<context:component-scan base-package="com.patitodehule.hellospringmvc" />
+	<context:component-scan base-package="com.patitodehule.plantillaweb" />
 	
 	<!-- Esta etiqueta implementa el uso de la anotacion @Transactional,
 		muy util para consentrarse solo en el proceso de negocio, ver los beans sessionFactory

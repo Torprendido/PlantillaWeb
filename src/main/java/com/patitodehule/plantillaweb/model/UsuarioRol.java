@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.model;
+package com.patitodehule.plantillaweb.model;
 // Generated May 5, 2017 10:54:13 AM by Hibernate Tools 4.3.5.Final
 
 import javax.persistence.Column;

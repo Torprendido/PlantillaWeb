@@ -28,4 +28,4 @@ Script para crear los usuarios y roles de la aplicacion. Se puede encontrar en l
 
 # Importar proyecto Eclipce.
 
-Se puede importar este proyecto en Eclipse si te diriges a la pestaña "File > Import" del IDE y desbues buscar la ruta donde hayas descomprimido o clonado el proyecto.
+Se puede importar este proyecto en Eclipse si te diriges a la pestaña "File > Import" del IDE y después buscar la ruta donde hayas descomprimido o clonado el proyecto.

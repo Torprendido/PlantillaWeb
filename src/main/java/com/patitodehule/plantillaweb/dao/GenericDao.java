@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.dao;
+package com.patitodehule.plantillaweb.dao;
 
 import java.util.List;
 import org.hibernate.Criteria;

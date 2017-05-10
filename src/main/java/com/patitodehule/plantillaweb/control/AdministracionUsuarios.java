@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.control;
+package com.patitodehule.plantillaweb.control;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.patitodehule.hellospringmvc.dao.UsuariosDao;
-import com.patitodehule.hellospringmvc.model.Usuario;
+import com.patitodehule.plantillaweb.dao.UsuariosDao;
+import com.patitodehule.plantillaweb.model.Usuario;
 
 @Controller
 @RequestMapping(value="/administracionUsuarios")

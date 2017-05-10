@@ -10,9 +10,12 @@
 			/WEB-INF/spring/root-context.xml
 		</param-value>
 	</context-param>
+	
+	<!-- para llamar al contexto raiz de la aplicacion desde un jsp con EL ejem:
+		http://localhost:8080/${initParam.appname}/ -->
 	<context-param>
 		<param-name>appname</param-name>
-		<param-value>app</param-value> <!-- ver context root -->
+		<param-value>plantillaweb</param-value> <!-- ver context root -->
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

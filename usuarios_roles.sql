@@ -1,3 +1,4 @@
+/* Tomar como referencia los parametros de conexion que se encuentra en el bean dataSource del archivo root-context.xml*/
 create table USUARIO (
 	ID_USUARIO int AUTO_INCREMENT,
 	NOMBRE varchar(45) not null unique,

@@ -40,5 +40,5 @@
 	   </authentication-provider>
 	</authentication-manager>
 	
-	<beans:bean class="com.patitodehule.hellospringmvc.util.WebSessionListener"/>
+	<beans:bean class="com.patitodehule.plantillaweb.util.WebSessionListener"/>
 </beans:beans>

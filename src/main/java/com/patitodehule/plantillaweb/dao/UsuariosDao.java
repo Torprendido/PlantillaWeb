@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.dao;
+package com.patitodehule.plantillaweb.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.patitodehule.hellospringmvc.model.Usuario;
+import com.patitodehule.plantillaweb.model.Usuario;
 
 @Repository("usuariosDao")
 public class UsuariosDao extends GenericDao<Usuario>{

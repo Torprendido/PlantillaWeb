@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.util;
+package com.patitodehule.plantillaweb.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

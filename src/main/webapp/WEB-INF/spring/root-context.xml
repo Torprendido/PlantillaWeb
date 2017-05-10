@@ -28,8 +28,8 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>com.patitodehule.hellospringmvc.model.Usuario</value>
-                <value>com.patitodehule.hellospringmvc.model.UsuarioRol</value>
+                <value>com.patitodehule.plantillaweb.model.Usuario</value>
+                <value>com.patitodehule.plantillaweb.model.UsuarioRol</value>
             </list>
         </property>
     </bean>

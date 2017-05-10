@@ -1,4 +1,4 @@
-package com.patitodehule.hellospringmvc.control;
+package com.patitodehule.plantillaweb.control;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
