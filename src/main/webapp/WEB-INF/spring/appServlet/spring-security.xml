@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	    	http://www.springframework.org/schema/security
+		    http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+	<!-- Spring security -->
+	
+	<!-- >http use-expressions="true">
+	    <intercept-url pattern="/admin*"
+	        access="hasRole('admin') and hasIpAddress('192.168.1.0/24')"/>
+	    	...
+  	</http-->
+	
+	<http auto-config="true">
+        <intercept-url pattern="/home/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
+        <intercept-url pattern="/administracionUsuarios/**" access="hasRole('ROLE_ADMIN')"/>
+        <form-login login-page="/login.do"
+        		login-processing-url="/validaUsuario"
+        		default-target-url="/home/welcome.do"
+				authentication-failure-url="http://www.google.com"/>
+    </http>
+	
+	<authentication-manager>
+	   <authentication-provider>
+	   	<jdbc-user-service data-source-ref="dataSource"
+		  users-by-username-query=
+		    "select NOMBRE as 'username', PASSWORD as 'password', ACTIVO as 'enabled' 
+		    from USUARIO 
+		    where NOMBRE = ? and ACTIVO = 1 "
+		  authorities-by-username-query=
+		    "select u.NOMBRE as 'username', ur.ROL as 'role' 
+		    from USUARIO_ROL ur 
+		    inner join USUARIO u on ur.ID_USUARIO = u.ID_USUARIO 
+		    where u.NOMBRE = ? " />
+		    <!-- password-encoder hash="bcrypt" /-->
+	   </authentication-provider>
+	</authentication-manager>
+	
+	<beans:bean class="com.patitodehule.hellospringmvc.util.WebSessionListener"/>
+</beans:beans>
