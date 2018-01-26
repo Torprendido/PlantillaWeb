@@ -16,7 +16,7 @@ public class HomeController {
 	@RequestMapping(value = "welcome.do")
 	public String home(Model model, HttpSession session) {
 		String username = (String) session.getAttribute("username");
-		model.addAttribute("usuario", username);;
+		model.addAttribute("usuario", username);
 		return "/home/welcome";
 	}
 	

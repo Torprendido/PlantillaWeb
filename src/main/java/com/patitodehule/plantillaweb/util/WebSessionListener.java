@@ -10,7 +10,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.session.HttpSessionCreatedEvent;
 import org.springframework.security.web.session.HttpSessionDestroyedEvent;
+import org.springframework.stereotype.Component;
 
+@Component
 public class WebSessionListener implements ApplicationListener<ApplicationEvent> {
 
 	private int counter = 0;
@@ -18,6 +20,7 @@ public class WebSessionListener implements ApplicationListener<ApplicationEvent>
 	private HttpSessionCreatedEvent hsce;
 	
 	public WebSessionListener() {
+		System.out.println("[listener creado]");
 		sdf = new SimpleDateFormat("yyyy-MM-dd");
 	}
 	
@@ -31,25 +34,24 @@ public class WebSessionListener implements ApplicationListener<ApplicationEvent>
 	 */
 	@Override
     public void onApplicationEvent(ApplicationEvent event) {
-		//System.out.println(event.getClass()); /*para ver los demas eventos*/
 		Date timestamp = new Date(event.getTimestamp());
-		if (event instanceof HttpSessionCreatedEvent) {
-			hsce = (HttpSessionCreatedEvent) event;
-        } else if (event instanceof HttpSessionDestroyedEvent) {
-        	counter --;
-        } else if (event instanceof InteractiveAuthenticationSuccessEvent) {
-			counter += 2; //Antes de que se logea un usuario ocurre HttpSessionDestroyedEvent
-			System.out.println("Total sessiones creadas " + counter);
-			System.out.println("Session creada en "
-					+ sdf.format(timestamp));
-			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-			System.out.println("username: " + auth.getName());
-			hsce.getSession().setAttribute("username", auth.getName());
-			
-			hsce.getSession().setMaxInactiveInterval(60/*1 minuto*/);
-			
-			hsce = null;
-		}
+//		if (event instanceof HttpSessionCreatedEvent) {
+//			hsce = (HttpSessionCreatedEvent) event;
+//        } else if (event instanceof HttpSessionDestroyedEvent) {
+//        	counter --;
+//        } else if (event instanceof InteractiveAuthenticationSuccessEvent) {
+//			counter += 2; //Antes de que se logea un usuario ocurre HttpSessionDestroyedEvent
+//			System.out.println("Total sessiones creadas " + counter);
+//			System.out.println("Session creada en "
+//					+ sdf.format(timestamp));
+//			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//			System.out.println("username: " + auth.getName());
+//			hsce.getSession().setAttribute("username", auth.getName());
+//			
+//			hsce.getSession().setMaxInactiveInterval(60/*1 minuto*/);
+//			
+//			hsce = null;
+//		}
     }
 	
 }
