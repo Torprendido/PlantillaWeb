@@ -7,13 +7,12 @@ Es un una plantilla básica para implementar una aplicación java web utilizando
 * java 1.7
 * mysql
 * Eclipse Neon
-* Spring Tool Suit
 * Hibernate Tools
-* Plujin de Integración de Maven para Eclipse (m2e)
+* gradle 4.5.1
 * Spring 4
 * Hibernate 4
-* Apache Tomcat 7
-* Otras librerías (ver pom.xml)
+* Apache Tomcat 7 (ver gretty.plugin)
+* Otras librerías (ver build.gradle)
 
 ### Implementaciones.
 
@@ -29,3 +28,6 @@ Script para crear los usuarios y roles de la aplicacion. Se puede encontrar en l
 # Importar proyecto Eclipce.
 
 Se puede importar este proyecto en Eclipse si te diriges a la pestaña "File > Import" del IDE y después buscar la ruta donde hayas descomprimido o clonado el proyecto.
+
+# Contruir proyecto
+$ gradle appRun # ejecutar comando desde la ruta del proyecto

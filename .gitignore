@@ -1,2 +1,9 @@
-/target/
-/bin/
+target/
+bin/
+.gradle/
+build/
+.idea/
+PlantillaWeb.iml
+gradle/
+gradlew
+gradlew.bat
