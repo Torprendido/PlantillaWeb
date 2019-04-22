@@ -46,8 +46,8 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/prueba");
-        dataSource.setUsername("desadb");
+        dataSource.setUrl("jdbc:mysql://10.9.6.16:3306/prueba");
+        dataSource.setUsername("prueba");
         dataSource.setPassword("123456");
         return dataSource;
     }
@@ -58,13 +58,10 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 		sf.setDataSource(dataSource());
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.show_sql", "true");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		sf.setHibernateProperties(properties);
-		/*Class<?>[] anotatedClasses = new Class<?>[] {
-				com.patitodehule.plantillaweb.model.Usuario.class,
-				com.patitodehule.plantillaweb.model.UsuarioRol.class };*/
 		sf.setPackagesToScan(
-		        new String[] {"org.baeldung.spring.persistence.model"});
-		//sf.setAnnotatedClasses(anotatedClasses);
+		        new String[] {"com.patitodehule.plantillaweb.model"});
 		return sf;
 	}
 	

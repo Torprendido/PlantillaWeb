@@ -7,3 +7,5 @@ PlantillaWeb.iml
 gradle/
 gradlew
 gradlew.bat
+.project/
+.settings/

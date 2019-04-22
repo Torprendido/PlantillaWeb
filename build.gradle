@@ -34,9 +34,9 @@ sourceSets {
 }
 
 dependencies {
-    compileOnly group: 'org.apache.tomcat', name: 'tomcat-coyote', version:'7.0.11'
-    compileOnly group: 'org.apache.tomcat', name: 'tomcat-jasper', version:'7.0.11'
-    providedCompile group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version:'3.7.1'
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '7.0.88'
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-coyote', version: '7.0.88'
+    providedCompile group: 'org.apache.tomcat', name: 'tomcat-dbcp', version: '7.0.88'
     
     def springFrameworkVersion = "4.3.8.RELEASE"
     //Spring 
@@ -75,6 +75,6 @@ gretty {
     enableNaming = true
     //contextConfigFile = file('tomcat_gradle_context.xml')
     dependencies {
-        gretty 'org.apache.tomcat:tomcat-dbcp:7.0.30'
+        gretty 'org.apache.tomcat:tomcat-jdbc:8.0.23'
     }
 }
